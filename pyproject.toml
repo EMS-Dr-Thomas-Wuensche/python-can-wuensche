@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.2", "packaging"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["version"]
+name = "python-can-wuensche"
+authors = [
+	{email = "support@ems-wuensche.com"}
+]
+maintainers = [
+	{email = "support@ems-wuensche.com"}
+]
+description = "python-can plugin for CAN bus interfaces from EMS Dr. Thomas Wuensche e.K."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Environment :: Plugins",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Manufacturing",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Operating System :: Microsoft",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Embedded Systems :: Controller Area Network (CAN)",
+]
+license = { text = "GNU Lesser General Public License v3 or later (LGPLv3+)" }
+keywords = [
+	"python-can",
+	"CANbus",
+	"EMSWuensche",
+	"CPC-USB",
+]
+dependencies = [ "python-can>=4.2" ]
+
+[project.optional-dependencies]
+dev = [ "pytest" ]
+
+[project.urls]
+Homepage = "https://www.ems-wuensche.com"
+Documentation = "https://github.com/EMS-Dr-Thomas-Wuensche/python-can-wuensche"
+Repository = "https://github.com/EMS-Dr-Thomas-Wuensche/python-can-wuensche"
+"Bug Tracker" = "https://github.com/EMS-Dr-Thomas-Wuensche/python-can-wuensche/issues"
+
+[tool.setuptools_scm]
+write_to = "src/can_wuensche/_version.py"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = "test"
+addopts = [
+	"--import-mode=importlib",
+]
+
+[project.entry-points."can.interface"]
+wuensche = "can_wuensche:EMSWuenscheBus"

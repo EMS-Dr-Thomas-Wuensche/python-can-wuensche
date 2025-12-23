@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+build/
+develop-eggs/
+dist/
+sdist/
+wheels/
+*.egg-info
+*.egg
+
+.pytest_cache/
+
+_version.py
