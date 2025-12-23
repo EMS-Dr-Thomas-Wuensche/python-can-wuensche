@@ -6,9 +6,8 @@ This project requires python-can (version >= 4.2). If it isn't automatically ins
 `python -m pip install python-can`  
 
 ### Install
-Install python-can plugin 'can-wuensche' by running the following command in a terminal. Ensure that the file is in the current directory or provide the full path to the file:  
-`python -m pip install can-wuensche.whl` or  
-`python -m pip install --no-index --find-links=can-wuensche.whl can_wuensche`  
+Install python-can plugin 'python-can-wuensche' by running the following command in a terminal. Ensure that the file is in the current directory or provide the full path to the file:  
+`python -m pip install python-can-wuensche`
 
 ### Usage
 Simply change the interface type of your can.Bus instance to "wuensche" and adjust the other values (channel) accordingly.  
